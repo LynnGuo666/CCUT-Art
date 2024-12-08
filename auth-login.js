@@ -3,14 +3,15 @@
 // @namespace    http://tampermonkey.net/
 // @updateURL    https://raw.githubusercontent.com/LynnGuo666/CCUT-Art/refs/heads/master/auth-login.js
 // @downloadURL  https://raw.githubusercontent.com/LynnGuo666/CCUT-Art/refs/heads/master/auth-login.js
-// @version      1.7
+// @version      1.8
 // @description  美化长春工业大学统一身份认证登录页面,实现苹果风格
 // @author       Lynn
 // @match        https://tysfrz.ccut.edu.cn/portal/login.html*
 // @grant        none
 // ==/UserScript==
 
-(function () {
+
+(function() {
     'use strict';
 
     // 添加样式
@@ -32,6 +33,10 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
             margin: 0;
             min-height: 100vh;
+        }
+
+        .loginFoot > ul > li span {
+            margin-left: 0px;
         }
 
         /* CCUT Logo */
@@ -61,7 +66,7 @@
 
         /* 登录框主体 */
         .login {
-            background: rgba(255, 255, 255, 0.7) !important;
+            background: rgba(255, 255, 255, 0.6) !important;
             backdrop-filter: blur(20px) !important;
             -webkit-backdrop-filter: blur(20px) !important;
             border-radius: 18px !important;
@@ -110,7 +115,6 @@
 
         .inputGroup img {
             position: absolute !important;
-            left: 12px !important;
             top: 50% !important;
             transform: translateY(-50%) !important;
             opacity: 0.5 !important;
@@ -163,9 +167,10 @@
             height: 46px !important;
             border-radius: 10px !important;
             cursor: pointer !important;
-            object-fit: cover !important;
+            object-fit: contain !important;
             border: 1px solid rgba(0, 0, 0, 0.1) !important;
             background: rgba(255, 255, 255, 0.9) !important;
+            margin-left: -12px;
         }
 
         .layui-col-xs5 > div {
@@ -271,8 +276,8 @@
             transition: all 0.3s ease !important;
             background: transparent !important;
         }
-        
-        
+
+
         .loginFoot > ul > li:last-child {
             margin: 0;
         }
@@ -337,8 +342,8 @@
 
     // 优化原有的登录切换函数
     const originalLoginModeQacode = window.loginModeQacode;
-    window.loginModeQacode = function (loginType, isSecondAuth) {
-        if (typeof originalLoginModeQacode === 'function') {
+    window.loginModeQacode = function(loginType, isSecondAuth) {
+        if(typeof originalLoginModeQacode === 'function') {
             originalLoginModeQacode(loginType, isSecondAuth);
         }
 
