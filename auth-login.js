@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @updateURL    https://raw.githubusercontent.com/LynnGuo666/CCUT-Art/refs/heads/master/auth-login.js
 // @downloadURL  https://raw.githubusercontent.com/LynnGuo666/CCUT-Art/refs/heads/master/auth-login.js
-// @version      1.8
+// @version      1.8.1
 // @description  美化长春工业大学统一身份认证登录页面,实现苹果风格
 // @author       Lynn
 // @match        https://tysfrz.ccut.edu.cn/portal/login.html*
