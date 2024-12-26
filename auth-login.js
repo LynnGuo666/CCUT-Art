@@ -3,13 +3,12 @@
 // @namespace    http://tampermonkey.net/
 // @updateURL    https://raw.githubusercontent.com/LynnGuo666/CCUT-Art/refs/heads/master/auth-login.js
 // @downloadURL  https://raw.githubusercontent.com/LynnGuo666/CCUT-Art/refs/heads/master/auth-login.js
-// @version      1.8
+// @version      1.8.1
 // @description  美化长春工业大学统一身份认证登录页面,实现苹果风格
 // @author       Lynn
 // @match        https://tysfrz.ccut.edu.cn/portal/login.html*
 // @grant        none
 // ==/UserScript==
-
 
 (function() {
     'use strict';
@@ -126,21 +125,21 @@
             margin-bottom: 20px !important;
         }
 
-/* 验证码区域调整 */
-.layui-col-xs7 {
-    height: 46px !important;
-    position: relative !important;
-    width: 65% !important; /* 增加宽度 */
-    float: left !important;
-    margin-right: 10px !important; /* 添加右边距 */
-}
+        /* 验证码区域调整 */
+        .layui-col-xs7 {
+            height: 46px !important;
+            position: relative !important;
+            width: 65% !important;
+            float: left !important;
+            margin-right: 10px !important;
+        }
 
-.layui-col-xs5 {
-    height: 46px !important;
-    width: 30% !important; /* 减少宽度 */
-    float: right !important;
-    margin-left: 0 !important; /* 移除左边距 */
-}
+        .layui-col-xs5 {
+            height: 46px !important;
+            width: 30% !important;
+            float: right !important;
+            margin-left: 0 !important;
+        }
 
         #captcha {
             width: 100% !important;
@@ -277,7 +276,6 @@
             background: transparent !important;
         }
 
-
         .loginFoot > ul > li:last-child {
             margin: 0;
         }
@@ -299,7 +297,6 @@
             display: none !important;
         }
     `;
-
     document.head.appendChild(style);
 
     // 添加CCUT Logo
@@ -343,7 +340,7 @@
     // 优化原有的登录切换函数
     const originalLoginModeQacode = window.loginModeQacode;
     window.loginModeQacode = function(loginType, isSecondAuth) {
-        if(typeof originalLoginModeQacode === 'function') {
+        if (typeof originalLoginModeQacode === 'function') {
             originalLoginModeQacode(loginType, isSecondAuth);
         }
 
